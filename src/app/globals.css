@@ -1,0 +1,248 @@
+/* ==========================================
+   LYKN Sci-Fi Cyan & Warm Ochre Theme
+   ========================================== */
+:root {
+  --bg-primary: #0a1120;       /* พื้นหลังสีน้ำเงินเข้มมืดสไตล์ Sci-Fi Lab */
+  --bg-card: #141f36;          /* การ์ดสีน้ำเงินไซแอนมืดอมเทา */
+  --text-main: #f0f7ff;        /* ข้อความสีขาวอมฟ้า อ่านสบายตา */
+  --text-muted: #8ba2ca;       /* ข้อความสีเทาฟ้าควันบุหรี่ */
+  --primary-color: #00d2ff;    /* สีฟ้าไซแอนนีออนสว่างจากแสงไฟแล็บ */
+  --primary-hover: #00b4dc;    
+  --ochre-accent: #d97706;     /* สีส้มมัสตาร์ดอุ่นๆ จากกางเกง */
+  --border-color: #273b61;     /* เส้นขอบสีน้ำเงินไซแอนมืด */
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 12px 30px -5px rgba(0, 210, 255, 0.2);
+}
+
+body {
+  font-family: 'Prompt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 980px;
+  margin: 2.5rem auto;
+  padding: 2.5rem;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* ==========================================
+   Forms & Inputs (รองรับทั้ง Text, Number, Select)
+   ========================================== */
+form {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 1.1rem 0.8rem;
+  align-items: center;
+  background-color: #0e172a;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  margin-bottom: 1.75rem;
+}
+
+form label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #e0f2fe;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input:not([type="submit"]):not([type="button"]),
+form select {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.95rem;
+  color: #ffffff;
+  background-color: #1a2a4a;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+form input:focus,
+form select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3.5px rgba(0, 210, 255, 0.3);
+}
+
+/* Error Messages */
+form span[role="alert"] {
+  grid-column: 2;
+  font-size: 0.85rem;
+  color: #ef4444;
+  margin-top: -0.4rem;
+}
+
+/* ==========================================
+   Buttons
+   ========================================== */
+button {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Primary Button (สีฟ้า Cyan นีออน สดใสลุคไซไฟ) */
+button[type="submit"],
+main > button {
+  background-color: var(--primary-color);
+  color: #0a1120;
+  box-shadow: 0 3px 12px rgba(0, 210, 255, 0.4);
+}
+
+button[type="submit"]:hover:not(:disabled),
+main > button:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Cancel / Reset Button */
+button[type="button"]:not(main > button) {
+  background-color: #1a2a4a;
+  color: var(--text-muted);
+  border: 1.5px solid var(--border-color);
+}
+
+button[type="button"]:not(main > button):hover {
+  background-color: #273b61;
+  color: #ffffff;
+}
+
+/* ==========================================
+   Action Buttons in Table (ปุ่มแก้ไข & ปุ่มลบสีแดงทึบ)
+   ========================================== */
+td button {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  margin-right: 0.4rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* ปุ่มแก้ไข - โทนส้มมัสตาร์ด Ochre Warm Tone */
+td button:first-child {
+  background-color: #b45309;
+  color: #fef3c7;
+  border: 1px solid #d97706;
+}
+
+td button:first-child:hover {
+  background-color: #d97706;
+  color: #ffffff;
+}
+
+/* ปุ่มลบ - สีแดงทึบสดสะใจ Solid Crimson Red */
+td button:last-child {
+  background-color: #ef4444 !important;
+  color: #ffffff !important;
+  border: 1px solid #ef4444 !important;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.4);
+}
+
+td button:last-child:hover {
+  background-color: #dc2626 !important;
+  border-color: #dc2626 !important;
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.5);
+  transform: translateY(-1px);
+}
+
+/* ==========================================
+   Table Styles
+   ========================================== */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1.25rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+th, td {
+  padding: 0.85rem 1.1rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+th {
+  background-color: #1e3a8a;  /* หัวตารางสีน้ำเงินเข้มไซแอน */
+  color: #bae6fd;            /* ตัวหนังสือสีฟ้าอ่อน */
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+}
+
+td {
+  border-bottom: 1px solid #1c2e50;
+  background-color: #141f36;
+  color: var(--text-main);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background-color: #1a2a4a;
+}
+
+td img {
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================
+   Status Messages
+   ========================================== */
+section[aria-live="polite"] p {
+  padding: 1.2rem;
+  border-radius: var(--radius-md);
+  background-color: #0e172a;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+section[aria-live="polite"] p[role="alert"] {
+  background-color: #3b1717;
+  color: #f87171;
+  border: 1px solid #7f1d1d;
+}
